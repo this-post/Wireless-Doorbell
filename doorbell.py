@@ -28,7 +28,7 @@ for i in range(75):
 			delay(timing)
 			logic_1 = 1
 			logic_0 = 0
-	#last wave ending with long 0
+	#last wave ending with longer 0 than usual
 	gpio.output(dataPin, 0)
 	time.sleep(0.005)
 gpio.cleanup()
