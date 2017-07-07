@@ -1,7 +1,7 @@
 import RPi.GPIO as gpio
 import time
 
-# Broad PIN numbering
+# Board PIN numbering
 dataPin = 12
 gpio.setmode(gpio.BOARD)
 gpio.setup(dataPin, gpio.OUT)
