@@ -15,19 +15,16 @@ times = [1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0,
 	0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0]
 
 for i in range(75):
-	logic_1 = 1
-	logic_0 = 0
+	logic = 1
 	for timing in times:
-		if logic_1:
+		if logic:
 			gpio.output(dataPin, 1)
 			delay(timing)
-			logic_1 = 0
-			logic_0 = 1
-		elif logic_0:
+			logic = 0
+		else:
 			gpio.output(dataPin, 0)
 			delay(timing)
-			logic_1 = 1
-			logic_0 = 0
+			logic = 1
 	#last wave ending with long 0
 	gpio.output(dataPin, 0)
 	time.sleep(0.005)
