@@ -6,8 +6,8 @@ dataPin = 12
 gpio.setmode(gpio.BOARD)
 gpio.setup(dataPin, gpio.OUT)
 
-def delay(long):
-	time.sleep(0.0005) if long else time.sleep(0.00025)
+def delay(is_long):
+	time.sleep(0.0005) if is_long else time.sleep(0.00025)
 
 #long = 1, short = 0
 times = [1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 
@@ -25,7 +25,7 @@ for i in range(75):
 			gpio.output(dataPin, 0)
 			delay(timing)
 			logic = 1
-	#last wave ending with long 0
+	#last wave ending with longer 0 than usual
 	gpio.output(dataPin, 0)
 	time.sleep(0.005)
 gpio.cleanup()
